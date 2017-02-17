@@ -26,6 +26,12 @@
 		<th align="left">
 			<input type="text" name="users.pass" value="${users.pass}" />
 		</th>
+		<th>严明星</th>
+		<th align="left">
+			<input type="text" name="users.ymx" value="${users.ymx}" />
+		</th>
+		</tr>
+		<tr>
 		<th>年龄</th>
 		<th align="left">
 			<input type="text" name="users.age" value="${users.age}" />&nbsp;&nbsp;
@@ -42,6 +48,7 @@
 		<th>ID</th>
 		<th>姓名</th>
 		<th>密码</th>
+		<th>严明星</th>
 		<th>年龄</th>
 		<th>操作</th>
 	</tr>
@@ -51,6 +58,7 @@
 		<td>${users.id}</td>
 		<td>${users.name}</td>
 		<td>${users.pass}</td>
+		<td>${users.ymx}</td>
 		<td>${users.age}</td>
 		<td width="120">
 			<a href="editUsers.action?users.id=${users.id}">修改</a>&nbsp;
@@ -64,6 +72,7 @@
 <input type="hidden" name="users.id" value="${users.id}" />
 <input type="hidden" name="users.name" value="${users.name}" />
 <input type="hidden" name="users.pass" value="${users.pass}" />
+<input type="hidden" name="users.ymx" value="${users.ymx}" />
 <input type="hidden" name="users.age" value="${users.age}" />
 <table  align="center" border="0" cellspacing="0" width="680">
 	<tr>

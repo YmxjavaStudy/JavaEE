@@ -10,6 +10,22 @@ public class Users {
 	
 	private Integer age;
 	
+	private String ymx;
+	
+	/**
+	 * @return the ymx
+	 */
+	public String getYmx() {
+		return ymx;
+	}
+
+	/**
+	 * @param ymx the ymx to set
+	 */
+	public void setYmx(String ymx) {
+		this.ymx = ymx;
+	}
+
 	public Users(){
 		
 	}

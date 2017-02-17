@@ -12,6 +12,7 @@
 	<property name="name" type="string" column="NAME"  />
 	<property name="pass" type="string" column="PASS"  />
 	<property name="age"  type="int" column="AGE"  />
+	<property name="ymx" type="string" column="YMX"/>
 </class>
 
 </hibernate-mapping>

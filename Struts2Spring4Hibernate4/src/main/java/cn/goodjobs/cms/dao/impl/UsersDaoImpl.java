@@ -67,7 +67,10 @@ public class UsersDaoImpl extends HibernateDaoSupport implements UsersDao {
 		}
 		if(users.getAge() != null){
 			hql += " and age = :age";
-		}		
+		}	
+		if(StringUtils.isNotBlank(users.getYmx())){
+			hql += " and ymx = :ymx";
+		}
 		Query query = this.currentSession().createQuery(hql);
 		
 		if(users.getId() != null){
@@ -81,7 +84,10 @@ public class UsersDaoImpl extends HibernateDaoSupport implements UsersDao {
 		}
 		if(users.getAge() != null){
 			query.setInteger("age", users.getAge());
-		}		
+		}
+		if(StringUtils.isNotBlank(users.getYmx())){
+			query.setString("ymx", users.getYmx());
+		}
 		List<Users> usersList = (List<Users>)query.list();
 		return usersList;
 	}
@@ -104,6 +110,9 @@ public class UsersDaoImpl extends HibernateDaoSupport implements UsersDao {
 		if(users.getAge() != null){
 			c.add(Restrictions.eq("age", users.getAge()));
 		}	
+		if (StringUtils.isNotBlank(users.getYmx())) {
+			c.add(Restrictions.eq("ymx", users.getYmx()));
+		}
 		List<Users> list = (List<Users>)c.list();
 		if(list != null && list.size() > 0){
 			return list.size();
@@ -127,8 +136,11 @@ public class UsersDaoImpl extends HibernateDaoSupport implements UsersDao {
 		if(users.getAge() != null){
 			c.add(Restrictions.eq("age", users.getAge()));
 		}	
-		c.setFirstResult(first);//分页查询起始位置
-		c.setMaxResults(count);//每次查询多少条纪录
+		if (StringUtils.isNotBlank(users.getYmx())) {
+			c.add(Restrictions.eq("ymx", users.getYmx()));
+		}
+		c.setFirstResult(first);//鍒嗛〉鏌ヨ璧峰浣嶇疆
+		c.setMaxResults(count);//姣忔鏌ヨ澶氬皯鏉＄邯褰�
 		return (List<Users>)c.list();
 
 	}

@@ -24,6 +24,10 @@
 		<td align="left"><input type="text" id="pass" name="users.pass" value="${users.pass}" /></td>
 	</tr>
 	<tr>
+		<th>严明星</th>
+		<td align="left"><input type="text" id="ymx" name="users.ymx" value="${users.ymx}" /></td>
+	</tr>
+	<tr>
 		<th>年龄</th>
 		<td align="left"><input type="text" id="age" name="users.age" value="${users.age}" /></td>
 	</tr>		
