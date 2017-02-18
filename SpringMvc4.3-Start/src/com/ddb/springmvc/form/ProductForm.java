@@ -9,5 +9,7 @@ public class ProductForm {
 	private String name;
 	private String description;
 	private String price;
+	private String model;
+	private String color;
 
 }

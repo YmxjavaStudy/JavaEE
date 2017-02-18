@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
+import org.apache.catalina.connector.Request;
 import org.springframework.stereotype.Service;
 
 import com.ddb.springmvc.domain.Product;
@@ -18,6 +19,8 @@ public class ProductServiceImpl implements ProductService {
 		product.setName("MiBook");
 		product.setDescription("MiBook write code is very cool!");
 		product.setPrice(4999.0d);
+		product.setModel("华为");
+		product.setColor("black");
 		add(product);
 	}
 	

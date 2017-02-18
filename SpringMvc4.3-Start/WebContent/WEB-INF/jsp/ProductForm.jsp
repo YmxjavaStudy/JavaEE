@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-	<form action="product_save.action" method="post">
+	<form action="product_deal.action" method="post">
 	<fieldset>
 		<legend>Add a product</legend>
 		<label for="name">Product Name:</label>
@@ -20,10 +20,16 @@
 		<label for="price">Price:</label>
 		<input type="text"  id="price" name="price" value="" tabindex="3" />
 		
+		<label for="model">Model:</label>
+		<input type="text"  id="model" name="model" value="" tabindex="4" />
+		
+		<label for="color">Color:</label>
+		<input type="text"  id="color" name="color" value="" tabindex="5" />
+		
 		<div id="buttons">
 		<label for="dummy" > </label>
-		<input id="reset" type="reset"  tabindex="4"/>
-		<input id="submit" type="submit" tabindex="5" value="Add Product" />
+		<input id="reset" type="reset"  tabindex="6"/>
+		<input id="submit" type="submit" tabindex="7" value="Add Product" />
 		</div>
 	</fieldset>
 	</form>

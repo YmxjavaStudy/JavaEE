@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,6 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.ddb.springmvc.domain.Product;
 import com.ddb.springmvc.form.ProductForm;
 import com.ddb.springmvc.service.ProductService;
+import com.ddb.springmvc.service.impl.ProductServiceImpl;
 
 @Controller
 public class ProductController {
@@ -28,13 +30,15 @@ public class ProductController {
 		return "ProductForm";
 	}
 
-	@RequestMapping(value = "/product_save", method = RequestMethod.POST)
+	@RequestMapping(value = "/product_deal", method = RequestMethod.POST)
 	public String saveProduct(ProductForm productForm, RedirectAttributes redirectAttributes) {
 		logger.info("saveProduct 被调用！");
 
 		Product product = new Product();
 		product.setName(productForm.getName());
 		product.setDescription(productForm.getDescription());
+		product.setModel(productForm.getModel());
+		product.setColor(productForm.getColor());
 
 		try {
 			product.setPrice(Double.parseDouble(productForm.getPrice()));
@@ -46,7 +50,7 @@ public class ProductController {
 		Product saveProduct = productService.add(product);
 		// 使用下面的对象，可以给重定向传值！
 		redirectAttributes.addFlashAttribute("message", "The product was successfully added!");
-		return "redirect:/product_view/" + saveProduct.getId()+".action";
+		return "redirect:/product_deal/" + saveProduct.getId()+".action";
 	}
 
 	//http://localhost:8080/SpringMvc4.3-Start/product_view/2.action
@@ -56,7 +60,13 @@ public class ProductController {
 		model.addAttribute("product", product);
 		return "ProductView";
 	}
-
+   @RequestMapping(value="/product_deal")
+   public String productDeal(@PathVariable Long id,Model model){
+	   Product product=productService.get(id);
+	   model.addAttribute("product",product);
+	   return "ProductDeal";
+	   
+   }
 	//http://localhost:8080/SpringMvc4.3-Start/product_retrieve.action?id=1
 	@RequestMapping(value = "/product_retrieve")
 	public String sendProduct(@RequestParam Long id, Model model) {
