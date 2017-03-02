@@ -20,6 +20,8 @@ public class SmiShopInfo implements Serializable {
 	private Integer id;
 
 	private String shopNo;
+	
+	private Integer[] ids;
 
 	private String shopName;
 

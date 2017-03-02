@@ -35,18 +35,19 @@ $("#btnLogin").click(function() {
 			hideLoadingDialog();
 			showmsg("登录异常");
 		},
-		success : function(res) {
+		success : function(vo) {
 			hideLoadingDialog();
-			if (!isNull(res)) {
+			if (!isNull(vo)) {
 				//console.log(res.shopNo);
 				//console.log(res);
 				clearLocalStorage();
-				setLocalStorage("username", res.shopNo);//用于记住用户名，不清除
-				setLocalStorage("shopNo", res.shopNo);
-				setLocalStorage("shopId", res.id);
-				setLocalStorage("shopInfo", JSON.stringify(res));
+				setLocalStorage("username", vo.shopNo);//用于记住用户名，不清除
+				setLocalStorage("shopNo", vo.shopNo);
+				setLocalStorage("shopId", vo.id);
+				setLocalStorage("shopInfo", JSON.stringify(vo));
 
 				showmsg("恭喜你，登录成功！");
+				window.location.href=ctx + '/main.do';
 
 			} else {
 				showmsg("用户名或密码错误");
