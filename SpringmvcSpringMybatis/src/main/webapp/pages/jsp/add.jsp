@@ -25,16 +25,16 @@
    <fieldset>
 				<legend>Add a shop info</legend>
 				<label for="shopName">Shop Name:</label>
-				<input type="text" id="shopName" name="shopName" value="" tabindex="1"/>
+				<input type="text" id="shopName" name="shopName" value="" tabindex="1" required/>
 				<br/>
 				<label for="shopNo">Shop No:</label>
-				<input type="text" id="shopNo" name="shopNo" value="" tabindex="2"/>
+				<input type="text" id="shopNo" name="shopNo" value="" tabindex="2" required/>
 				<br/>
 				<label for="ShopType">ShopType:</label>
-				<input type="text" id="shopType" name="shopType" value="" tabindex="3"/>
+				<input type="text" id="shopType" name="shopType" value="" tabindex="3" required/>
 				<br/>
 				<label for="Note">Note:</label>
-				<input type="text" id="Note" name="Note" value="" tabindex="4"/>
+				<input type="text" id="Note" name="Note" value="" tabindex="4" required/>
 				<br/>
 				<div id="buttons">
 				<input id="reset" type="reset" tabindex="5"/>

@@ -8,10 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-登录成功
-${message}
-<br/>
-<a href="/SpringmvcSpringMybatis/pages/jsp/add.jsp">增加商店信息</a>
+<span style="text-align: center;"><a href="/SpringmvcSpringMybatis/pages/jsp/add.jsp">增加商店信息</a></span>
 <table align="center" border="1" cellspacing="0" width="680">
 	<tr>
 		<th>&nbsp;</th>
@@ -37,9 +34,13 @@ ${message}
 		</td>
 	</tr>
 	</c:forEach> 
+	<tr>
+	  <td colspan="4"><input type="submit" id="delBtn" name="delBtn" value="删除"></td>
+	  <td colspan="4">
+	<input type="submit" id="updateBtn" name="updateBtn" value="修改"></td>
+	</tr>
 </table>
-<input type="submit" id="delBtn" name="delBtn" value="删除">
-<input type="submit" id="updateBtn" name="updateBtn" value="修改">
+
 	<script src="pages/script/jquery.min.js"></script>
 	<script src="pages/script/md5.js"></script>
 	<script src="pages/script/common.js"></script>
